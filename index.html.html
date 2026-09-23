@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía educativa de primeros auxilios con pasos claros para situaciones de emergencia.">
+    <title>Primeros Auxilios | Guías paso a paso</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d62828;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #d62828;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 22px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d62828;
+        }
+
+        .emergency-button {
+            background-color: #d62828;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .emergency-button:hover {
+            background-color: #b91c1c;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 600px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(135deg, #fff5f5, #ffffff);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text .tag {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #b91c1c;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero h1 span {
+            color: #d62828;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #d62828;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c;
+        }
+
+        .btn-secondary {
+            border: 2px solid #d62828;
+            color: #d62828;
+            background-color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff1f2;
+        }
+
+        .hero-image {
+            width: 420px;
+            height: 420px;
+            background-color: #d62828;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 130px;
+            box-shadow: 0 20px 50px rgba(214, 40, 40, 0.25);
+        }
+
+        /* ===== SITUACIONES ===== */
+        .situaciones {
+            padding: 80px 7%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            background-color: #fee2e2;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            color: #d62828;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== APRENDE ===== */
+        .aprende {
+            padding: 80px 7%;
+            background-color: #f7f9fc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .aprende-text {
+            max-width: 550px;
+        }
+
+        .aprende-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .aprende-text p {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .step-number {
+            min-width: 40px;
+            height: 40px;
+            background-color: #d62828;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .learn-box {
+            width: 400px;
+            min-height: 330px;
+            background-color: #d62828;
+            border-radius: 20px;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 15px 40px rgba(214, 40, 40, 0.2);
+        }
+
+        .learn-box h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .learn-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .learn-box a {
+            display: inline-block;
+            width: fit-content;
+            background-color: white;
+            color: #d62828;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== EMERGENCIA ===== */
+        .emergency {
+            padding: 70px 7%;
+        }
+
+        .emergency-box {
+            background-color: #111827;
+            color: white;
+            border-radius: 20px;
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .emergency-box h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .emergency-box p {
+            color: #d1d5db;
+        }
+
+        .emergency-box a {
+            background-color: #d62828;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            padding: 50px 7% 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #94a3b8;
+        }
+
+        footer a {
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+                font-size: 90px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .aprende {
+                flex-direction: column;
+            }
+
+            .emergency-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .emergency-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-image {
+                width: 230px;
+                height: 230px;
+                font-size: 70px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .learn-box {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* ===== GUÍAS DETALLADAS ===== */
+        .guide-button {
+            border: 0;
+            background: none;
+            color: #d62828;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .guide-button:hover {
+            text-decoration: underline;
+        }
+
+        .guide-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(15, 23, 42, 0.72);
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .guide-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guide-content {
+            width: min(760px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,.25);
+        }
+
+        .guide-content h2 {
+            color: #111827;
+            margin-bottom: 8px;
+            font-size: 30px;
+        }
+
+        .guide-content .guide-intro {
+            color: #6b7280;
+            margin-bottom: 22px;
+        }
+
+        .guide-steps {
+            display: grid;
+            gap: 13px;
+            margin-bottom: 22px;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #d62828;
+        }
+
+        .guide-step-number {
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #d62828;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .guide-warning {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            color: #9a3412;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .close-guide {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border: 0;
+            border-radius: 50%;
+            background: #f3f4f6;
+            color: #111827;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close-guide:hover {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .emergency-number {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fecaca;
+        }
+
+        @media (max-width: 650px) {
+            .guide-content {
+                padding: 28px 20px;
+            }
+
+            .guide-content h2 {
+                font-size: 25px;
+                padding-right: 35px;
+            }
+        }
+
+    
+/* ASISTENTE IA */
+.ai-section{padding:80px 7%;background:linear-gradient(135deg,#fff5f5,#f8fafc)}
+.ai-container{max-width:900px;margin:auto}.ai-box{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.ai-header{background:#111827;color:#fff;padding:25px 30px;display:flex;align-items:center;gap:15px}.ai-avatar{width:50px;height:50px;border-radius:50%;background:#d62828;display:flex;align-items:center;justify-content:center;font-size:25px}
+.ai-chat{height:390px;padding:25px;overflow-y:auto;background:#f8fafc}.ai-message{max-width:82%;padding:13px 16px;border-radius:15px;margin-bottom:14px;line-height:1.5;white-space:pre-line}.ai-message.bot{background:#fff;border:1px solid #e5e7eb}.ai-message.user{margin-left:auto;background:#d62828;color:#fff}
+.ai-quick{padding:0 18px 18px;background:#fff;display:flex;flex-wrap:wrap;gap:8px}.ai-quick button{border:1px solid #fecaca;background:#fff5f5;color:#b91c1c;border-radius:20px;padding:8px 12px;cursor:pointer}
+.ai-input-area{padding:18px;background:#fff;border-top:1px solid #e5e7eb;display:flex;gap:10px}.ai-input{flex:1;border:1px solid #d1d5db;border-radius:10px;padding:13px;font:inherit}.ai-send{border:0;background:#d62828;color:#fff;padding:0 20px;border-radius:10px;font-weight:bold;cursor:pointer}.ai-alert{margin-top:15px;padding:12px 15px;border-radius:10px;background:#fff7ed;color:#9a3412;font-size:14px}
+
+</style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">✚</div>
+            Primeros Auxilios
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#situaciones">Guías</a></li>
+                <li><a href="#aprende">Aprender</a></li><li><a href="#asistente">🤖 Asistente IA</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <a href="#emergencia" class="emergency-button">
+            🚨 Emergencia
+        </a>
+    </header>
+
+
+    <!-- ===== HERO ===== -->
+    <main id="inicio">
+        <section class="hero">
+
+            <div class="hero-text">
+                <span class="tag">🩹 Educación en primeros auxilios</span>
+
+                <h1>
+                    Saber qué hacer
+                    <span>puede salvar una vida.</span>
+                </h1>
+
+                <p>
+                    Aprende cómo actuar ante diferentes situaciones de
+                    emergencia con información sencilla, clara y fácil
+                    de comprender.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#situaciones" class="btn-primary">
+                        Comenzar a aprender
+                    </a>
+
+                    <a href="#aprende" class="btn-secondary">
+                        Cómo funciona
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                ✚
+            </div>
+
+        </section>
+
+
+        <!-- ===== SITUACIONES ===== -->
+        <section class="situaciones" id="situaciones">
+
+            <div class="section-title">
+                <h2>Situaciones frecuentes</h2>
+                <p>
+                    Conoce cómo actuar ante algunas de las emergencias
+                    más comunes.
+                </p>
+            </div>
+
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-icon">🩸</div>
+                    <h3>Heridas y sangrado</h3>
+                    <p>Aprende las medidas básicas para controlar un sangrado y proteger una herida.</p>
+                    <button class="guide-button" onclick="openGuide('sangrado')">Ver pasos →</button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Quemaduras</h3>
+                    <p>Conoce las acciones iniciales que pueden realizarse ante una quemadura.</p>
+                    <button class="guide-button" onclick="openGuide('quemadura')">Ver pasos →</button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">😵</div>
+                    <h3>Desmayos</h3>
+                    <p>Aprende qué hacer y qué evitar cuando una persona pierde temporalmente el conocimiento.</p>
+                    <button class="guide-button" onclick="openGuide('desmayo')">Ver pasos →</button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🦴</div>
+                    <h3>Fracturas</h3>
+                    <p>Descubre cómo actuar ante una posible fractura mientras llega ayuda profesional.</p>
+                    <button class="guide-button" onclick="openGuide('fractura')">Ver pasos →</button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">😮‍💨</div>
+                    <h3>Atragantamiento</h3>
+                    <p>Conoce las acciones recomendadas ante una obstrucción de las vías respiratorias.</p>
+                    <button class="guide-button" onclick="openGuide('atragantamiento')">Ver pasos →</button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3>RCP</h3>
+                    <p>Aprende los conceptos básicos de la reanimación cardiopulmonar.</p>
+                    <button class="guide-button" onclick="openGuide('rcp')">Ver pasos →</button>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- ===== APRENDE ===== -->
+        <section class="aprende" id="aprende">
+
+            <div class="aprende-text">
+                <h2>Aprende paso a paso</h2>
+
+                <p>
+                    Nuestra información está organizada para que puedas
+                    encontrar rápidamente lo que necesitas y comprender
+                    los conceptos fundamentales de los primeros auxilios.
+                </p>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <span>Identifica la situación.</span>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Evalúa la seguridad del lugar.</span>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Llama a emergencias cuando la situación lo requiera.</span>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <span>Aplica los primeros auxilios adecuados sin ponerte en riesgo.</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="learn-box">
+                <h3>Tu conocimiento importa.</h3>
+
+                <p>
+                    Una preparación adecuada puede ayudarte a actuar
+                    con mayor seguridad mientras llega la atención
+                    profesional.
+                </p>
+
+                <a href="#situaciones">
+                    Explorar guías
+                </a>
+            </div>
+
+        </section>
+
+
+        
+<!-- ASISTENTE IA -->
+<section class="ai-section" id="asistente">
+<div class="section-title"><h2>🤖 Asistente de emergencias</h2><p>Describe qué está pasando y recibe una orientación inicial.</p></div>
+<div class="ai-container"><div class="ai-box">
+<div class="ai-header"><div class="ai-avatar">✚</div><div><h3>Asistente de Primeros Auxilios</h3><small>Orientación educativa inmediata</small></div></div>
+<div class="ai-chat" id="aiChat"><div class="ai-message bot">Hola. Cuéntame qué está pasando y te indicaré los pasos iniciales.
+
+⚠️ Si es una emergencia grave, llama al 123 en Colombia primero. Esta herramienta no sustituye a los servicios de emergencia ni a un profesional de salud.</div></div>
+<div class="ai-quick">
+<button onclick="askAI('Hay mucho sangrado')">🩸 Sangrado</button>
+<button onclick="askAI('Hay una quemadura')">🔥 Quemadura</button>
+<button onclick="askAI('Una persona se desmayó')">😵 Desmayo</button>
+<button onclick="askAI('Creo que hay una fractura')">🦴 Fractura</button>
+<button onclick="askAI('Una persona se está atragantando')">😮‍💨 Atragantamiento</button>
+<button onclick="askAI('La persona no respira normalmente')">❤️ No respira</button>
+</div>
+<div class="ai-input-area"><input class="ai-input" id="aiInput" placeholder="Escribe qué está pasando..." onkeydown="if(event.key==='Enter')askAI()"><button class="ai-send" onclick="askAI()">Enviar</button></div>
+</div><div class="ai-alert">🚨 <b>Importante:</b> ante una emergencia real y grave, llama al <b>123</b> y sigue las instrucciones del operador.</div></div>
+</section>
+
+<!-- ===== EMERGENCIA ===== -->
+        <section class="emergency" id="emergencia">
+
+            <div class="emergency-box">
+
+                <div>
+                    <h2>🚨 ¿Estás ante una emergencia?</h2>
+
+                    <p>
+                        Si existe una emergencia real, busca ayuda profesional
+                        de inmediato. En Colombia puedes llamar al número 123.
+                    </p>
+                    <span class="emergency-number">📞 Emergencias: 123</span>
+                </div>
+
+                <a href="tel:123">
+                    📞 Llamar al 123
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== GUÍAS DETALLADAS ===== -->
+        <div class="guide-modal" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+            <div class="guide-content">
+                <button class="close-guide" onclick="closeGuide()" aria-label="Cerrar guía">×</button>
+                <h2 id="guideTitle"></h2>
+                <p class="guide-intro" id="guideIntro"></p>
+                <div class="guide-steps" id="guideSteps"></div>
+                <div class="guide-warning" id="guideWarning"></div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>✚ Primeros Auxilios</h3>
+
+                <p>
+                    Sitio educativo dedicado a proporcionar
+                    información básica sobre primeros auxilios
+                    de manera clara y accesible.
+                </p>
+            </div>
+
+            <div>
+                <h3>Enlaces</h3>
+
+                <a href="#inicio">Inicio</a>
+                <a href="#situaciones">Guías</a>
+                <a href="#aprende">Aprender</a>
+            </div>
+
+            <div>
+                <h3>Información</h3>
+
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Fuentes</a>
+                <a href="#">Contacto</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Primeros Auxilios. Sitio educativo.
+        </div>
+
+    </footer>
+
+
+    <script>
+        const guides = {
+            sangrado: {
+                title: "🩸 Heridas y sangrado",
+                intro: "Actúa con calma y evita el contacto directo con la sangre siempre que sea posible.",
+                steps: [
+                    "Asegúrate de que el lugar sea seguro para ti y para la persona.",
+                    "Lávate las manos o utiliza guantes si están disponibles.",
+                    "Aplica presión directa y firme sobre la herida con una gasa o tela limpia.",
+                    "Mantén la presión hasta que el sangrado disminuya o llegue ayuda. Si la tela se empapa, coloca otra encima sin retirar la primera.",
+                    "Cuando el sangrado esté controlado, cubre la herida con un apósito limpio.",
+                    "Busca atención médica si el sangrado es abundante, no se controla o la herida es profunda."
+                ],
+                warning: "No retires objetos que estén incrustados en la herida. No pongas sustancias caseras sobre una herida grave."
+            },
+            quemadura: {
+                title: "🔥 Quemaduras",
+                intro: "El objetivo inicial es detener la exposición al calor y enfriar la zona de forma segura.",
+                steps: [
+                    "Aléjate de la fuente de calor y asegúrate de que el lugar sea seguro.",
+                    "Enfría la zona con agua corriente fresca durante unos 20 minutos, especialmente durante los primeros momentos.",
+                    "Retira con cuidado anillos, relojes u otros objetos cercanos antes de que aparezca hinchazón, si no están pegados a la piel.",
+                    "Cubre la quemadura con una gasa estéril o un material limpio que no se adhiera a la piel.",
+                    "Busca atención médica si la quemadura es extensa, profunda, eléctrica, química o afecta zonas delicadas como cara, manos, pies o genitales."
+                ],
+                warning: "No uses hielo, mantequilla, aceite ni remedios caseros. No revientes las ampollas."
+            },
+            desmayo: {
+                title: "😵 Desmayo",
+                intro: "Una persona que se desmaya necesita un lugar seguro y vigilancia.",
+                steps: [
+                    "Comprueba que el lugar sea seguro y verifica si la persona responde.",
+                    "Si respira y no parece tener una lesión importante, acuéstala boca arriba.",
+                    "Eleva las piernas suavemente si no hay sospecha de lesión y la persona lo tolera.",
+                    "Afloja prendas que estén demasiado ajustadas y permite que haya aire fresco.",
+                    "Cuando recupere el conocimiento, deja que se incorpore lentamente y permanece atento a cómo se siente.",
+                    "Si no responde pero respira normalmente, colócala en posición lateral de seguridad y solicita ayuda.",
+                    "Si no respira normalmente, llama a emergencias e inicia RCP si sabes realizarla."
+                ],
+                warning: "No le des comida, bebida ni medicamentos mientras esté inconsciente. Busca atención urgente si el desmayo ocurre durante el ejercicio, se repite, hay una lesión o la persona no recupera la conciencia rápidamente."
+            },
+            fractura: {
+                title: "🦴 Fracturas",
+                intro: "Ante una posible fractura, evita mover la zona innecesariamente.",
+                steps: [
+                    "Asegúrate de que el lugar sea seguro y pide ayuda si la lesión es grave.",
+                    "Mantén a la persona quieta y evita que apoye o use la parte lesionada.",
+                    "No intentes enderezar el hueso ni devolver la articulación a su posición.",
+                    "Inmoviliza la zona en la posición en la que se encuentra, sin apretar demasiado.",
+                    "Si hay hinchazón, puedes aplicar frío envuelto en una tela durante periodos cortos, sin colocarlo directamente sobre la piel.",
+                    "Si existe una herida abierta, cúbrela con un apósito limpio sin presionar directamente sobre un hueso expuesto.",
+                    "Busca atención médica, especialmente si hay deformidad, dolor intenso, pérdida de sensibilidad o cambios de color en la extremidad."
+                ],
+                warning: "No intentes mover a la persona si sospechas una lesión de cuello o columna, salvo que exista un peligro inmediato."
+            },
+            atragantamiento: {
+                title: "😮‍💨 Atragantamiento",
+                intro: "Si la persona puede toser o hablar, anímala a seguir tosiendo. Si no puede respirar, hablar o toser de forma efectiva, actúa rápidamente.",
+                steps: [
+                    "Pregunta si se está atragantando y comprueba si puede toser o hablar.",
+                    "Si puede toser con fuerza, anímala a continuar tosiendo y vigílala.",
+                    "Si la obstrucción es grave y la persona está consciente, realiza 5 golpes firmes entre los omóplatos y luego 5 compresiones abdominales, alternándolos según sea necesario.",
+                    "Llama al servicio de emergencias si la obstrucción no se resuelve o la persona empeora.",
+                    "Si la persona pierde el conocimiento, colócala con cuidado en el suelo, llama a emergencias e inicia RCP siguiendo las instrucciones del operador si es posible."
+                ],
+                warning: "No introduzcas los dedos a ciegas en la boca. En bebés y en personas embarazadas existen maniobras específicas; busca instrucciones profesionales de emergencia."
+            },
+            rcp: {
+                title: "❤️ RCP",
+                intro: "La RCP se utiliza cuando una persona no responde y no respira normalmente. Si ocurre una emergencia real, pide ayuda profesional de inmediato.",
+                steps: [
+                    "Comprueba que el lugar sea seguro y verifica si la persona responde.",
+                    "Llama al servicio de emergencias (123 en Colombia) o pide a otra persona que llame y consiga un desfibrilador externo automático (DEA) si hay uno disponible.",
+                    "Si la persona no respira normalmente, inicia compresiones en el centro del pecho.",
+                    "Realiza compresiones fuertes y rápidas, a un ritmo aproximado de 100 a 120 por minuto, dejando que el pecho vuelva a subir entre cada compresión.",
+                    "Si estás capacitado para hacerlo, combina las compresiones con ventilaciones. Si no, continúa con compresiones hasta que llegue ayuda o un DEA indique qué hacer.",
+                    "Cuando llegue un DEA, enciéndelo y sigue exactamente sus instrucciones."
+                ],
+                warning: "La RCP requiere entrenamiento práctico para aprender la técnica correctamente. En una emergencia real, sigue las instrucciones del servicio de emergencias."
+            }
+        };
+
+        function openGuide(id) {
+            const guide = guides[id];
+            if (!guide) return;
+
+            document.getElementById("guideTitle").textContent = guide.title;
+            document.getElementById("guideIntro").textContent = guide.intro;
+
+            const steps = document.getElementById("guideSteps");
+            steps.innerHTML = guide.steps.map((step, index) => `
+                <div class="guide-step">
+                    <div class="guide-step-number">${index + 1}</div>
+                    <div>${step}</div>
+                </div>
+            `).join("");
+
+            document.getElementById("guideWarning").textContent = "⚠️ " + guide.warning;
+            document.getElementById("guideModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGuide() {
+            document.getElementById("guideModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        document.getElementById("guideModal").addEventListener("click", function(event) {
+            if (event.target === this) closeGuide();
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") closeGuide();
+        });
+    </script>
+
+
+<script>
+const aiData=[
+{keys:["no respira","no esta respirando","sin respiracion","rcp"],msg:"❤️ PERSONA QUE NO RESPIRA NORMALMENTE\n1. Comprueba que el lugar sea seguro.\n2. Comprueba si responde y si respira normalmente.\n3. Llama al 123 inmediatamente.\n4. Si no respira normalmente, inicia compresiones en el centro del pecho.\n5. Hazlas fuertes y rápidas, aproximadamente 100–120 por minuto.\n6. Si hay un DEA disponible, enciéndelo y sigue sus instrucciones.\n⚠️ Sigue siempre las indicaciones del operador."},
+{keys:["sangrado","sangra","sangre","herida","corte"],msg:"🩸 SANGRADO\n1. Asegúrate de que el lugar sea seguro.\n2. Usa guantes si están disponibles.\n3. Aplica presión directa y firme con una gasa o tela limpia.\n4. Si se empapa, coloca otra tela encima sin retirar la primera.\n5. Llama al 123 si el sangrado es abundante o no se controla.\n⚠️ No retires objetos incrustados."},
+{keys:["quemadura","quemado","caliente"],msg:"🔥 QUEMADURA\n1. Aléjate de la fuente de calor.\n2. Enfría la zona con agua corriente fresca durante unos 20 minutos.\n3. Retira anillos o relojes cercanos si no están pegados.\n4. Cubre la zona con una gasa limpia.\n5. Busca atención médica si es extensa, profunda, eléctrica, química o afecta zonas delicadas.\n⚠️ No uses hielo, mantequilla, aceite ni remedios caseros."},
+{keys:["desmayo","desmay","inconsciente","desvanec"],msg:"😵 DESMAYO\n1. Comprueba que el lugar sea seguro.\n2. Comprueba si responde y si respira normalmente.\n3. Si respira y no hay lesión importante, acuéstala boca arriba.\n4. Si no hay sospecha de lesión, puedes elevar las piernas suavemente.\n5. Si no responde pero respira, colócala de lado y pide ayuda.\n6. Si no respira normalmente, llama al 123 e inicia RCP si sabes hacerlo.\n⚠️ No le des comida, bebida ni medicamentos mientras esté inconsciente."},
+{keys:["fractura","fracturado","hueso","quebro","quebrado"],msg:"🦴 POSIBLE FRACTURA\n1. No muevas innecesariamente a la persona.\n2. No intentes enderezar el hueso.\n3. Mantén inmóvil la zona en la posición encontrada.\n4. Puedes aplicar frío envuelto en una tela si hay hinchazón.\n5. Cubre cualquier herida con material limpio.\n6. Busca atención médica.\n⚠️ Si sospechas lesión de cuello o columna, no la muevas salvo peligro inmediato."},
+{keys:["atragant","ahogando","comida atorada","atorado"],msg:"😮‍💨 ATRAGANTAMIENTO\n1. Pregunta si puede toser o hablar.\n2. Si puede toser con fuerza, anímala a continuar.\n3. Si no puede respirar, hablar o toser eficazmente, pide ayuda.\n4. En una persona consciente con obstrucción grave, alterna 5 golpes entre los omóplatos y 5 compresiones abdominales.\n5. Llama al 123 si no se resuelve.\n6. Si pierde el conocimiento, llama al 123 e inicia RCP siguiendo al operador.\n⚠️ No introduzcas los dedos a ciegas en la boca."}
+];
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function getAI(s){
+ let t=norm(s);
+ for(const x of aiData) if(x.keys.some(k=>t.includes(norm(k)))) return x.msg;
+ return "No puedo identificar con seguridad la emergencia. Describe qué ocurrió y qué señales observas.\n\nSi existe peligro grave, llama al 123 en Colombia inmediatamente.";
+}
+function addMsg(t,c){let d=document.createElement("div");d.className="ai-message "+c;d.textContent=t;let chat=document.getElementById("aiChat");chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
+function askAI(v=""){let i=document.getElementById("aiInput"),t=(v||i.value).trim();if(!t)return;addMsg(t,"user");i.value="";setTimeout(()=>addMsg(getAI(t),"bot"),250)}
+</script>
+
+</body>
+</html>
